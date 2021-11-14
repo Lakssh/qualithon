@@ -26,4 +26,18 @@ public class TreasureHunt extends FrameworkUtils {
     public final By buttonMapProceed = By.id("mapsChallengeSubmit");
 
     public final By imgCaptcha = By.id("notABotCaptchaImg");
+    public final By txtCaptcha = By.id("notABotCaptchaResponse");
+    public final By btnSubmitCaptcha = By.id("notABotCaptchaSubmit");
+
+    public final By urlSocket = By.id("wsurl");
+    public final By socketMessage = By.xpath("//div[@class='yellow lighten-3']");
+    public final By txtAccessToken = By.id("socketGateMessage");
+    public final By btnSubmitAccessToken = By.xpath("//button[@class='btn deep-orange darken-4']");
+
+    public final By socketUrl = By.id("serverSelected");
+    public final By btnClick = By.xpath("//button[@class='btn btn-sm btn-primary']");
+    public final By msg = By.id("msgToServer");
+    public final By btnSubmit = By.xpath("//button[@class='btn btn-sm btn-success']");
+    public final By txtResponse = By.xpath("//ul[@id='responseFromServer']/li");
+
 }

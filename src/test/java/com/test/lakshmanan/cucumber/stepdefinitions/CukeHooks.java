@@ -15,18 +15,17 @@ public class CukeHooks {
     @Before
     public void setUp(Scenario scenario) {
         DriverManager.getInstance().getTestParameters().setScenario(scenario);
-        utils.addStepLog("Execution started for Scenario: " +DriverManager.getInstance().getTestParameters().getScenario().getName() );
+        //utils.addStepLog("Execution started for Scenario: " +DriverManager.getInstance().getTestParameters().getScenario().getName() );
 
     }
     @After
     public void tearDown(Scenario scenario){
         DriverManager.getInstance().closeDriver();
-        utils.addStepLog("Execution completed for Scenario: " +DriverManager.getInstance().getTestParameters().getScenario().getName() + " and driver closed");
     }
 
     @AfterStep
     public void afterStep(Scenario scenario) throws IOException {
-        utils.addScreenshot (scenario);
+        //utils.addScreenshot (scenario);
     }
 
 }

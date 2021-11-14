@@ -46,7 +46,7 @@ public class FrameworkUtils {
     public static void addStepLog(String message) {
 
         Calendar calendar = Calendar.getInstance();
-        ExtentCucumberAdapter.addTestStepLog(message);
+        //ExtentCucumberAdapter.addTestStepLog(message);
         Logger logger = LoggerFactory.getLogger(calendar.getTime() + "\t" + "Step");
         logger.info(message);
 
@@ -62,7 +62,7 @@ public class FrameworkUtils {
     public static void addStepError(String message) {
 
         Calendar calendar = Calendar.getInstance();
-        ExtentCucumberAdapter.addTestStepLog(message);
+        //ExtentCucumberAdapter.addTestStepLog(message);
         Logger logger = LoggerFactory.getLogger(calendar.getTime() + "\t" + "Step");
         logger.error(message);
         Assert.fail(message);
@@ -196,7 +196,6 @@ public class FrameworkUtils {
         try {
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", driver.findElement(by));
-            addStepLog(name + " is clicked");
         } catch (NoSuchElementException e) {
             addStepError(name + " is not clicked" + e.getMessage());
         }

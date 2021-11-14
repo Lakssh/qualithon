@@ -6,7 +6,7 @@ import org.testng.annotations.DataProvider;
 
 
 @CucumberOptions(features = "src/test/java/com/test/lakshmanan/cucumber/features" , glue = "com.test.lakshmanan.cucumber.stepdefinitions" ,
-        tags = ("@Bot"), plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
+        tags = ("@Bot"))
 
 public class BotTestngTestRunner extends AbstractTestNGCucumberTests {
     @Override

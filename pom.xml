@@ -10,13 +10,13 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <cucumberVersion>6.9.1</cucumberVersion>
     <testngVersion>7.4.0</testngVersion>
-    <seleniumVersion>3.141.59</seleniumVersion>
+    <seleniumVersion>4.0.0</seleniumVersion>
     <maven-compiler-pluginVersion>3.8.0</maven-compiler-pluginVersion>
-    <source.and.target.JVM.version>17</source.and.target.JVM.version>
+    <source.and.target.JVM.version>1.8</source.and.target.JVM.version>
     <org.apache.maven.plugins.maven-surefire-plugin.version>2.22.1</org.apache.maven.plugins.maven-surefire-plugin.version>
     <aspectj.version>1.9.5</aspectj.version>
   </properties>
@@ -25,9 +25,9 @@
     <!-- to run one of the profiles defined below, simply add -P name_of_the_profile
         to mvn command ie.: mvn clean test -P runTestsInIos -->
     <profile>
-      <id>runRegressionTest</id>
+      <id>runBot</id>
       <properties>
-        <testNG.suiteXmlFile>src/test/resources/TestNGXMLs/RegressionTest.xml</testNG.suiteXmlFile>
+        <testNG.suiteXmlFile>src/test/resources/testngXMLs/Bot.xml</testNG.suiteXmlFile>
       </properties>
       <build>
         <plugins>
@@ -35,48 +35,7 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>${maven-compiler-pluginVersion}</version>
-            <configuration>
-              <encoding>UTF-8</encoding>
-              <source>${source.and.target.JVM.version}</source>
-              <target>${source.and.target.JVM.version}</target>
-              <fork>true</fork>
-              <compilerArgs>
-                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
-                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
-                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
-                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED</arg>
-                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
-                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</arg>
-                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
-                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
-                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
-                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED</arg>
-              </compilerArgs>
-              <annotationProcessorPaths>
-                <path>
-                  <groupId>org.projectlombok</groupId>
-                  <artifactId>lombok</artifactId>
-                  <version>1.18.16</version>
-                </path>
-            </annotationProcessorPaths>
-            </configuration>
           </plugin>
-<!--          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>properties-maven-plugin</artifactId>
-            <version>1.0.0</version>
-            <executions>
-              <execution>
-                <phase>generate-resources</phase>
-                <goals>
-                  <goal>write-project-properties</goal>
-                </goals>
-                <configuration>
-                  <outputFile>${project.basedir}/src/test/resources/GlobalSettings.properties</outputFile>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>-->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>

@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="CucumberBDDFramework" />
+        <module name="Bot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="CucumberBDDFramework" target="17" />
+      <module name="Bot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -24,7 +24,8 @@ public class DriverManager {
     public void setDriver(WebDriver driver){ DriverManager.driver.set(driver);}
     public WebDriver getDriver() { return driver.get(); }
     public void closeDriver(){
-        driver.get().close();
+        //driver.get().close();
+        driver.get().quit();
         driver.remove();
     }
     public void setParameters(TestParameters parameters){ DriverManager.getInstance().testParameters.set(parameters); }
